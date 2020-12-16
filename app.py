@@ -7,6 +7,7 @@ app.debug = True
 Bootstrap(app)
 
 db = SQLAlchemy(app)
+#CAMBIO
 #app.config['SQLALCHEMY_DATABASE_URI']='postgresql+psycopg2://postgres:12345@localhost:5432/escolares'
 app.config['SQLALCHEMY_DATABASE_URI']='postgres://kxzqzoiceiicjh:09244940a207ccbd7d9a32f23c1e9880a8e7a095d21192c0e7a0012ca0b9b67b@ec2-54-211-238-131.compute-1.amazonaws.com:5432/d1unl284n22aid'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False

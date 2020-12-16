@@ -30,7 +30,7 @@ def index():
 		campo_apellido = request.form['apellido']
 		alumno = Alumnos(nombre=campo_nombre,apellido=campo_apellido)
 		db.session.add(alumno)
-		db.session.comit()
+		db.session.commit()
 		mensaje = "Alumno registrado"
 		return render_template("index.html", mensaje = mensaje)
 	return render_template("index.html", variable = lista)

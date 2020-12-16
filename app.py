@@ -19,7 +19,7 @@ class Alumnos(db.Model):
 	nombre = db.Column(db.String(30))
 	apellido = db.Column(db.String(100))
 
-	lista = ["Nosotros", "Contacto", "Preguntas frecuentes"]
+lista = ["Nosotros", "Contacto", "Preguntas frecuentes"]
 
 @app.route('/', methods=['GET', 'POST'] )
 def index():
@@ -33,7 +33,7 @@ def index():
 		db.session.comit()
 		mensaje = "Alumno registrado"
 		return render_template("index.html", mensaje = mensaje)
-		return render_template("index.html", variable = lista)
+	return render_template("index.html", variable = lista)
 
 @app.route('/acerca')
 def acerca():

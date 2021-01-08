@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block body %}
-<div class = "jumbotron">
+   <div class="jumbotron"
+
+      <h1> " Servicios en la Nube" </h1>
 <p> Este parrafo pertenece a la vista acerca </p>
 	<h1> "Servicios en la nube" </h1>
 
@@ -9,28 +11,23 @@
 	</p>
 	
 	<ul>
-		{% for elemento in vlista %}
+         {% for elemento in variable %}
+          <li>{{elemento}}</li>
+         {% endfor %}
+      </ul>
 
-		<li> {{elemento}} </li>
+      {% if "Acerca" in variable %}
+         <p>El elemento Acerca existe en la lista</p>
+      {% else %}
+         <p>El elemento Acerca no existe en la lista</p>
+      {% endif %}
 
-		{% endfor %}
+      <form action="/" method="POST">
+         <input type="text" name="nombre" id="nombre">
+         <input type="text" name="apellido" id="apellido">
+         <input type="submit" class="btn btn-primary" value="Registrar">
 
-	</ul>
-		{% if "Acerca" in vlista %}
-
-		<p> El elemento Acerca existe en la lista </p>
-
-		{% else %}
-
-		<p>El elemento Acerca no existe en la lista </p>
-		{% endif %}
-
-	<form method = "POST">
-		<input type="text" name="nombre" id="nombre">
-		<input type="text" name="apellido" id="apellido">
-		<input type="submit" class="btn btn-primary" value="Registrar">
-	</form>
-
-	<p> {{mensaje}} </p>
-</div>
-{% endblock %}
+      </form>
+      <p>{{mensaje}}</p>
+   </div>
+      {% endblock %}
